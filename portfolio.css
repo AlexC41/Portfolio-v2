@@ -1,0 +1,42 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.proWrap { 
+    border: solid 5px black;
+    width: 300px;
+    height: 350px; /* temporarily */
+    margin: 10px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-image: url("resources/patterns/1.jpg");
+    opacity: 60%;
+}
+
+.proWrap:hover {
+    opacity: 100%;
+    transform: scale(1.12, 1.12);
+    transition: 1s;
+}
+
+.proWrap p {
+    margin: 0px;
+    font-size: 50px;
+    background-color: white;
+}
+
+.proWrap img {
+    width: 200px;
+}

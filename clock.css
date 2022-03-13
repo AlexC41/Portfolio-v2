@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
+button {
+  background-color: #d4b996;
+  font-size: 20px;
+  margin: 2.5px;
+  cursor: pointer;
+  width: 130px;
+}
+
+button:hover { opacity: 80% }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display { 
+  display: flex;
+  flex-direction: row;
+  height: 60vh;
+}
+
+.settings { width: 300px }
+
+.clockArea {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: #2d2d2d;   
+  width: 100%;
+  border: solid 2px red;
+  height: 775px;
+}
+
+
+/* settings area */
+
+.vContainer {
+  display: flex;
+  flex-direction: column;
+  border: solid 5px green;
+  padding: 2px;
+}
+
+.setName {
+  text-align: center;
+  padding: 5px 0px;
+  border: solid 5px blue;
+}
+
+.hContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 5px red;
+  padding: 2px;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: solid 5px brown;
+  padding: 2px;
+}
+
+#left { 
+  text-align: left;
+  width: 100px;
+}
+
+#right {
+  text-align: right;
+  width: 100px;
+}
+
+/* sliders from here down */
+
+.sliders {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  margin: 5px 0px;
+}    
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+    
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+    
+input:checked + .slider { background-color: #2196F3 }
+    
+input:checked + .slider:before { transform: translateX(26px) }
+
+div > select { width: 100px }
+
+div > input { width: 50px }
+
+/* clock 1 digital \/\/\/ */
+
+#cl1d, .date {
+  font-size: 100px;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-left: 40px;
+  border-left: solid 4px #ed1f24;
+  padding-left: 20px;
+}
+
+/* clock 2 digital \/\/\/ */
+
+#cl2d {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  width: 280px;
+  height: 100px; 
+  padding-top: 50px;
+}
+  
+.block {
+  width: calc(100% / 12);
+  height: 20%;
+  color: #474747;
+}
+  
+.block:not(:nth-child(n + 16)):nth-child(n + 11), .block:not(:nth-child(n + 46)):nth-child(n + 41) {
+  margin-right: 10px; 
+}
+  
+.block:not(:nth-child(n + 31)):nth-child(n + 26) {
+  margin-right: 20px; 
+}
+  
+.block:before {
+  content: attr(id);
+  position: relative;
+  display: block;
+  line-height: 10px;
+  text-align: center; 
+}
+  
+.block:nth-child(-n + 10):before {
+  content: "0" attr(id); 
+}
+  
+.active {
+  color: whitesmoke;
+  font-weight: 500; 
+}
+
+.second {
+  color: #FF8300; 
+}
+
+.divider {
+  position: absolute;
+  width: 2px;
+  background-color: whitesmoke;
+  height: 50%;
+  top: 60px;
+  left: calc(50% + 19px); 
+}
+
+.hourFormat {
+  color: #474747;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between ;
+  position: absolute;
+  left: 340px;
+  top: 65px;
+  height: 60px;
+}
+
+.hourFormat > div{
+  height: 20px;
+}
+
+/* clock 3 digital \/\/\/ */
+
+#cl3d {
+  margin-top: calc((72px*10)/2);
+  position: relative;
+  display: flex;
+  width: inherit;
+  justify-content: center;
+}
+
+#cl3d > div {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+  /* align-items: center; */
+}
+
+.nums {
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: #f9fbfd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.pop {
+  color: #3e6ccb;
+  background-color: #dfe6f6;
+}
+
+.stripe {
+  background-color: #ed1f24;
+  margin: 0px 5px;
+  border-radius: 15px;
+  transition:  500ms ease-in-out;
+}
+
+
+/* clock 1 analog \/\/\/ */
+
+#cl1a {
+  height: 100%;
+  border: solid 2px yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.timeZone > select {
+  position: absolute;
+  top: -100px;
+  width: 300px;
+  /* border: solid 1px lightgreen; */
+  text-align: center;
+  font-size: 250%;
+  color: white;
+  background-color: #2d2d2d;
+  border: 6px solid transparent;
+  border-radius: 20px;
+}
+
+.timeZone, .dpdw {
+  background-color: #2d2d2d;
+  /* z-index: 2; */
+}
+
+.dropdown {
+  position: absolute;
+  width: 300px;
+  text-align: center;
+  font-size: 250%;
+  top: -100px;
+  border : solid 1px yellow;
+  z-index: 5;
+}
+
+.dpdw {
+  text-align: left;
+  /* height: 300px; */
+}
+
+.city:hover {
+  background-color: #d4b996;
+  cursor: pointer;
+}
+
+* {
+  --height-sec: 135px;
+  --height-min: 130px;
+  --height-h: 120px;
+
+  --seg-height: 4px;
+  --seg-5th-height: 20px;
+
+  --clock-width: 300px;
+  --clock-height: 300px;
+
+  --test : 4px;
+  --scale : 0.75;
+}
+
+.MC {
+  position: relative;
+  /* border: solid 1px purple; */
+  border-radius: 50%;
+  width: var(--clock-width);
+  height: 300px;
+}
+
+.LC {
+  position: relative;
+  /* border: solid 1px purple; */
+  left: 0px;
+  border-radius: 50%;
+  width: var(--clock-width);
+  height: 300px;
+  transform: scale(var(--scale));
+}
+
+.RC {
+  position: relative;
+  /* border: solid 1px purple; */
+  left: 0px;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  transform: scale(var(--scale));
+}
+
+.seg {
+  position: absolute;
+  border-top: solid 2px green;
+  width: 3px;
+  height: calc((100% - var(--seg-height))/2);
+  left: 147px;
+  /* transform: rotate(6deg); */
+  transform-origin: bottom center;
+  z-index: 1;
+}
+
+.seg:nth-child(5n+1) {
+  border-top: solid 10px grey;
+  height: calc((100% - var(--seg-5th-height))/2);
+  z-index: 1;
+}
+
+.center { 
+  --width: 10px;
+  position: absolute; 
+  top: calc((100% - var(--width))/2); 
+  left: calc((100% - var(--width))/2); 
+  width: var(--width); 
+  height: var(--width); 
+  background: white; 
+  border-radius: 50%; 
+  z-index: 1;
+}
+
+.MC > .second, .LC > .second, .RC > .second {
+  position: absolute;
+  height: var(--height-sec);
+  width: 2px;
+  background-color: #2196F3;
+  left: calc((100% - var(--test))/2);
+  top: calc((100%/2) - var(--height-sec));
+  transform-origin: bottom center;
+  /* z-index: 1; */
+}
+.MC > .minute, .LC > .minute, .RC > .minute {
+  position: absolute;
+  height: var(--height-min);
+  width: 2px;
+  background-color:#d4b996;
+  transform-origin: bottom center;
+  left: calc((100% - var(--test))/2);
+  top: calc((100%/2) - var(--height-min));
+  /* z-index: 3; */
+}
+.MC > .hour, .LC > .hour, .RC > .hour {
+  position: absolute;
+  height: var(--height-h);
+  width: 2px;
+  background-color:#269639;
+  transform-origin: bottom center;
+  left: calc((100% - var(--test))/2);
+  top: calc((100%/2) - var(--height-h));
+  /* z-index: 4; */
+}
+

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock port 2</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+
+    <div class = "pageTitle">
+        <h1>Clock</h1>
+    </div>
+    <div class = "page">
+        <div class = "leftArea">
+            <div class = "menu">
+                <a href="portfolio.html"><button>Home</button></a>
+                <a href="portfolio.html"><button>Calculator</button></a>
+                <a href="portfolio.html"><button>Blog Page</button></a>
+                <a href="portfolio.html"><button>PokeCards</button></a>
+                <a href="portfolio.html"><button>oCalc</button></a>
+                <div class = "setts" onclick="HnS(settings)"><button>Settings</button></div>
+            </div>
+        </div>
+    
+        <div class = "contentArea">
+            <div class = "display">
+
+                <div class = "settings" >
+                    <div class = "vContainer">
+                        <div class = "setName" onclick="HnS(basicSet)">Basic Settings</div>
+                        <div class = "hContainer" id = "basicSet">
+                            <div class = "optionsContainer" id = "left">
+                                <!-- <div>Digital :</div> -->
+                                <div id = "dateSlideText">Date :</div>
+                                <div id = "formatSlideText">12h Format :</div>
+                            </div>
+                            <div class = "optionsContainer">
+                                <!-- <label class = "sliders" id = "digitalSlider">
+                                    <input type = "checkbox" id = "digitalSlide" checked onclick="dVSa()">
+                                    <span class = "slider"></span>
+                                </label> -->
+                                <label class = "sliders" id = "dateSlide" >
+                                    <input type = "checkbox" onclick="HnS(date)" checked>
+                                    <span class = "slider"></span>
+                                </label>
+                                <label class = "sliders" id = "formatSlider">
+                                    <input type = "checkbox" id = "formatSlide">
+                                    <span class = "slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "vContainer">
+                        <div class = "setName" onclick="HnS(clockType)">Clock Type</div>
+                        <!-- add >> style = "display: none" << after finishing editing -->
+                        <div class = "optionsContainer" id = "clockType">
+                            <label for = "type1d"><input type ="radio" class = "digital" id = "type1d" name = "clock" value = "type1d" onchange="typeSelect(this)" checked>Digital 1 >>> Basic</label>
+                            <label for = "type2d"><input type ="radio" class = "digital" id = "type2d" name = "clock" value = "type2d" onchange="typeSelect(this)">Digital 2 >>> Digits</label>                            
+                            <label for = "type3d"><input type ="radio" class = "digital" id = "type3d" name = "clock" value = "type3d" onchange="typeSelect(this)">Digital 3 >>> Sliders</label>                            
+                            <label for = "type4a"><input type ="radio" class = "analog" id = "type4a" name = "clock" value = "type4a" onchange="typeSelect(this)">Analog 1 >>> Elegant</label>
+                        </div>
+                    </div>
+                    <div class = "vContainer" id = "clockCustom">
+                        <div class = "setName" onclick="HnS(clockPers)">Clock Personalize</div>
+                        <div class = "vContainer" id = "clockPers" style = "display: none">
+                            <div class = "setName" onclick="HnS(clockFont)">Font</div>
+                            <div class = "hContainer" id = "clockFont">
+                                <div class = "optionsContainer" id = "left">
+                                    <div>Font choose</div>
+                                    <div class = "urlArea" id = "clockURLtext" style = "display : none;">Font URL</div>
+                                    <div>Font size</div>
+                                    <div>Font color</div>
+                                </div>
+                                <div class = "optionsContainer" id = "right">
+                                    <div>
+                                        <select onchange="fontSelector(clock, this)">
+                                            <option value = "basic">Default</option>
+                                            <option value = "arial">Arial</option>
+                                            <option value = "Comic Sans MS, Comic Sans, cursive">Comic Sans</option>
+                                            <option value = "Pushster, cursive">Google font 1</option>
+                                            <option value = "Add URL">Add URL</option>
+                                        </select>
+                                    </div>
+                                    <div class = "urlArea" style = "display : none;" >
+                                        <input type = "url" id = "clockURLin" placeholder="W.I.P.">
+                                        <input type = "submit" id = "subTest" value = "Enter">
+                                    </div>
+                                    <div>
+                                        <input type = "number" id = "fontSizeC" value = 100 oninput = "fontSize(clock, fontSizeC)">
+                                    </div>
+                                    <div>
+                                        <input type = "color" id = "clockColor" oninput = "colorChanger(clock, clockColor)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "setName" onclick="HnS(clockShadow)">Shadow</div>
+                            <div class = "hContainer" id = "clockShadow">
+                                <div class = "optionsContainer" id = "left">
+                                    <div>Horizontal</div>
+                                    <div>Vertical</div>
+                                    <div>Blur</div>
+                                    <div>Color</div>
+                                </div>
+                                <div class = "optionsContainer" id = "right">
+                                    <div>
+                                        <input type = "number" value = 0 id = "cShadowH" oninput = "shadowCustom(clock, cShadowH, cShadowV, cShadowB, cShadowCP)">
+                                    </div>
+                                    <div>
+                                        <input type = "number" value = 0 id = "cShadowV" oninput = "shadowCustom(clock, cShadowH, cShadowV, cShadowB, cShadowCP)">
+                                    </div>
+                                    <div>
+                                        <input type = "number" min = "0" value = 0 id = "cShadowB" oninput = "shadowCustom(clock, cShadowH, cShadowV, cShadowB, cShadowCP)">
+                                    </div>
+                                    <div>
+                                        <input type = "color" id = "cShadowCP" oninput = "shadowCustom(clock, cShadowH, cShadowV, cShadowB, cShadowCP)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "vContainer" id = "dateCustom">
+                        <div class = "setName" onclick="HnS(datePers)">Date Personalize</div>
+                        <div class = "vContainer" id = "datePers" style = "display: none">
+                            <div class = "setName" onclick="HnS(dateFont)">Font</div>
+                            <div class = "hContainer" id = "dateFont">
+                                <div class = "optionsContainer" id = "left">
+                                    <div>Font choose</div>
+                                    <div>Font size</div>
+                                    <div>Font color</div>
+                                    <div id = "dateURLtext" style = "display : none;">Font URL</div>
+                                </div>
+                                <div class = "optionsContainer" id = "right">
+                                    <div>
+                                        <select onchange="fontSelector(date, this)">
+                                            <option value = "basic">Default</option>
+                                            <option value = "arial">Arial</option>
+                                            <option value = "Comic Sans MS, Comic Sans, cursive">Comic Sans</option>
+                                            <option value = "Pushster, cursive">Google font 1</option>
+                                            <option value = "Add URL">Add URL</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <input type = "text" id = "dateURLin" placeholder="W.I.P." style = "display : none;">
+                                    </div>
+                                    <div>
+                                        <input type = "number" id = "fontSizeD" value = 100 oninput = "fontSize(date, fontSizeD)">
+                                    </div>
+                                    <div>
+                                        <input type = "color" id = "dateColor" oninput = "colorChanger(date, dateColor)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "setName" onclick="HnS(dateShadow)">Shadow</div>
+                            <div class = "hContainer" id = "dateShadow">
+                                <div class = "optionsContainer" id = "left">
+                                    <div>Horizontal</div>
+                                    <div>Vertical</div>
+                                    <div>Blur</div>
+                                    <div>Color</div>
+                                </div>
+                                <div class = "optionsContainer" id = "right">
+                                    <div>
+                                        <input type = "number" value = 0 id = "dShadowH" oninput = "shadowCustom(date, dShadowH, dShadowV, dShadowB, dShadowCP)">
+                                    </div>
+                                    <div>
+                                        <input type = "number" value = 0 id = "dShadowV" oninput = "shadowCustom(date, dShadowH, dShadowV, dShadowB, dShadowCP)">
+                                    </div>
+                                    <div>
+                                        <input type = "number" min = "0" value = 0 id = "dShadowB" oninput = "shadowCustom(date, dShadowH, dShadowV, dShadowB, dShadowCP)">
+                                    </div>
+                                    <div>
+                                        <input type = "color" id = "dShadowCP" oninput = "shadowCustom(date, dShadowH, dShadowV, dShadowB, dShadowCP)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "clockArea">
+                    
+                    <!-- move >> style = "display: none" << from cl1d to cl1a after finishing editing -->
+                    <div class = "clock" id = "cl1d" style = "display: none"></div>
+                    <div class = "clock" id = "cl2d" style = "display: none">
+                        <div class="block" id="0"></div>
+                        <div class="block" id="1"></div>
+                        <div class="block" id="2"></div>
+                        <div class="block" id="3"></div>
+                        <div class="block" id="4"></div>
+                        <div class="block" id="5"></div>
+                        <div class="block" id="6"></div>
+                        <div class="block" id="7"></div>
+                        <div class="block" id="8"></div>
+                        <div class="block" id="9"></div>
+                        <div class="block" id="10"></div>
+                        <div class="block" id="11"></div>
+                        <div class="block" id="12"></div>
+                        <div class="block" id="13"></div>
+                        <div class="block" id="14"></div>
+                        <div class="block" id="15"></div>
+                        <div class="block" id="16"></div>
+                        <div class="block" id="17"></div>
+                        <div class="block" id="18"></div>
+                        <div class="block" id="19"></div>
+                        <div class="block" id="20"></div>
+                        <div class="block" id="21"></div>
+                        <div class="block" id="22"></div>
+                        <div class="block" id="23"></div>
+                        <div class="block" id="24"></div>
+                        <div class="block" id="25"></div>
+                        <div class="block" id="26"></div>
+                        <div class="block" id="27"></div>
+                        <div class="block" id="28"></div>
+                        <div class="block" id="29"></div>
+                        <div class="block" id="30"></div>
+                        <div class="block" id="31"></div>
+                        <div class="block" id="32"></div>
+                        <div class="block" id="33"></div>
+                        <div class="block" id="34"></div>
+                        <div class="block" id="35"></div>
+                        <div class="block" id="36"></div>
+                        <div class="block" id="37"></div>
+                        <div class="block" id="38"></div>
+                        <div class="block" id="39"></div>
+                        <div class="block" id="40"></div>
+                        <div class="block" id="41"></div>
+                        <div class="block" id="42"></div>
+                        <div class="block" id="43"></div>
+                        <div class="block" id="44"></div>
+                        <div class="block" id="45"></div>
+                        <div class="block" id="46"></div>
+                        <div class="block" id="47"></div>
+                        <div class="block" id="48"></div>
+                        <div class="block" id="49"></div>
+                        <div class="block" id="50"></div>
+                        <div class="block" id="51"></div>
+                        <div class="block" id="52"></div>
+                        <div class="block" id="53"></div>
+                        <div class="block" id="54"></div>
+                        <div class="block" id="55"></div>
+                        <div class="block" id="56"></div>
+                        <div class="block" id="57"></div>
+                        <div class="block" id="58"></div>
+                        <div class="block" id="59"></div>
+                        <div class="divider"></div>
+                        <div class="hourFormat">
+                            <div class = "am"> AM </div>                      
+                            <div class = "pm"> PM </div>
+                        </div>
+                    </div>
+                    <div class = "clock" id = "cl3d" style = "display: none;">
+                        <div class = "c3Hours">
+                            <div class = "stripe">
+                                <div class = "nums" value = "0">0</div>
+                                <div class = "nums" value = "1">1</div>
+                                <div class = "nums" value = "2">2</div>
+                            </div>
+                            <div class = "stripe">
+                                <div class = "nums" value = "0">0</div>
+                                <div class = "nums" value = "1">1</div>
+                                <div class = "nums" value = "2">2</div>
+                                <div class = "nums" value = "3">3</div>
+                                <div class = "nums" value = "4">4</div>
+                                <div class = "nums" value = "5">5</div>
+                                <div class = "nums" value = "6">6</div>
+                                <div class = "nums" value = "7">7</div>
+                                <div class = "nums" value = "8">8</div>
+                                <div class = "nums" value = "9">9</div>
+                            </div>
+                        </div>
+                        <div class = "c3Minutes">
+                            <div class = "stripe">
+                                <div class = "nums" value = "0">0</div>
+                                <div class = "nums" value = "1">1</div>
+                                <div class = "nums" value = "2">2</div>
+                                <div class = "nums" value = "3">3</div>
+                                <div class = "nums" value = "4">4</div>
+                                <div class = "nums" value = "5">5</div>
+                            </div>
+                            <div class = "stripe">
+                                <div class = "nums" value = "0">0</div>
+                                <div class = "nums" value = "1">1</div>
+                                <div class = "nums" value = "2">2</div>
+                                <div class = "nums" value = "3">3</div>
+                                <div class = "nums" value = "4">4</div>
+                                <div class = "nums" value = "5">5</div>
+                                <div class = "nums" value = "6">6</div>
+                                <div class = "nums" value = "7">7</div>
+                                <div class = "nums" value = "8">8</div>
+                                <div class = "nums" value = "9">9</div>
+                            </div>
+                        </div>
+                        <div class = "c3Secondes">
+                            <div class = "stripe">
+                                <div class = "nums" value = "0">0</div>
+                                <div class = "nums" value = "1">1</div>
+                                <div class = "nums" value = "2">2</div>
+                                <div class = "nums" value = "3">3</div>
+                                <div class = "nums" value = "4">4</div>
+                                <div class = "nums" value = "5">5</div>
+                            </div>
+                            <div class = "stripe">
+                                <div class = "nums" value = "0">0</div>
+                                <div class = "nums" value = "1">1</div>
+                                <div class = "nums" value = "2">2</div>
+                                <div class = "nums" value = "3">3</div>
+                                <div class = "nums" value = "4">4</div>
+                                <div class = "nums" value = "5">5</div>
+                                <div class = "nums" value = "6">6</div>
+                                <div class = "nums" value = "7">7</div>
+                                <div class = "nums" value = "8">8</div>
+                                <div class = "nums" value = "9">9</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "clock" id = "cl1a">
+                        <div class = "LC">
+                            <div class = "timeZone">
+                                <div class = "dropdown">
+                                    <button onclick="HnS(dpdwL); HnS(citySearch)" class = "dpBtn">Dropdown</button>
+                                    <input type = "text" placeholder = "Search..." style = "display: none;" id = "citySearch" onkeyup = "cityFilter()">
+                                    <select class = "dpdwL" style = "display: none;" size = "12">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class = "hour"></div>
+                            <div class = "minute"></div>
+                            <div class = "second"></div>
+                            <div class = "center"></div>
+                            <div class = "segments">
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                            </div>
+                        </div>
+                        <div class = "MC">
+                            <div class = "timeZone">
+                                <div class = "dropdown">
+                                    <button onclick="HnS(dpdwM); HnS(citySearch)" class = "dpBtn">Dropdown</button>
+                                    <input type = "text" placeholder = "Search..." style = "display: none;" id = "citySearch" onkeyup = "cityFilter()">
+                                    <select class = "dpdwM" style = "display: none;" size = "12">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class = "hour"></div>
+                            <div class = "minute"></div>
+                            <div class = "second"></div>
+                            <div class = "center"></div>
+                            <div class = "segments">
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                            </div>
+                        </div>
+                        <div class = "RC">
+                            <div class = "timeZone">
+                                <select>
+                                    <option value = "basic">Default</option>
+                                    <option value = "arial">Arial</option>
+                                    <option value = "Comic Sans MS, Comic Sans, cursive">Comic Sans</option>
+                                    <option value = "Pushster, cursive">Google font 1</option>
+                                    <option value = "Add URL">Add URL</option>
+                                </select>
+                            </div>
+                            <div class = "hour"></div>
+                            <div class = "minute"></div>
+                            <div class = "second"></div>
+                            <div class = "center"></div>
+                            <div class = "segments">
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                                <div class = "seg"></div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+<!-- delete >> style = "display: none" << after finishing editing -->
+                    <div class = "date" style = "display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class= "contact"></div>
+    <script src="main.js"></script>
+    <script src="clock.js"></script>
+    
+</body>
+</html>
