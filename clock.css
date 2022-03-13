@@ -402,4 +402,6 @@ div > input { width: 50px }
 .dropdown > select {
   font-size: 25px;
   width: 80%;
+  background-color: #2d2d2d;
+  border: transparent;
 }
