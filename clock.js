@@ -406,10 +406,8 @@ function setClock1Analog (){
                     // console.log(i);
                     let x = bla[i].split("/")
                     document.querySelector(".dpBtn").innerHTML = x.pop();
-
-                    let y = document.querySelector("#citySearch")
-                    console.log(y.innerHTML)
-                    // y.innerHTML = clear
+                    asd.style.display = "none"
+                    document.querySelector("#citySearch").style.display = "none"
                 })
             }
             
