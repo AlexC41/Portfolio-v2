@@ -270,6 +270,9 @@ div > input { width: 50px }
 .dropdown {
   position: absolute;
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   font-size: 250%;
   top: -100px;
@@ -390,3 +393,13 @@ div > input { width: 50px }
   /* z-index: 4; */
 }
 
+.dropdown > input { 
+  height: 40px;
+  width: 70%;
+  font-size: 25px;
+}
+
+.dropdown > select {
+  font-size: 25px;
+  width: 80%;
+}
