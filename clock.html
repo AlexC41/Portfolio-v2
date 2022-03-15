@@ -17,7 +17,7 @@
         <div class = "leftArea">
             <div class = "menu">
                 <a href="portfolio.html"><button>Home</button></a>
-                <a href="portfolio.html"><button>Calculator</button></a>
+                <a href="calculator.html"><button>Calculator</button></a>
                 <a href="portfolio.html"><button>Blog Page</button></a>
                 <a href="portfolio.html"><button>PokeCards</button></a>
                 <a href="portfolio.html"><button>oCalc</button></a>
@@ -55,8 +55,7 @@
                     </div>
                     <div class = "vContainer">
                         <div class = "setName" onclick="HnS(clockType)">Clock Type</div>
-                        <!-- add >> style = "display: none" << after finishing editing -->
-                        <div class = "optionsContainer" id = "clockType">
+                        <div class = "optionsContainer" id = "clockType" style = "display: none">
                             <label for = "type1d"><input type ="radio" class = "digital" id = "type1d" name = "clock" value = "type1d" onchange="typeSelect(this)" checked>Digital 1 >>> Basic</label>
                             <label for = "type2d"><input type ="radio" class = "digital" id = "type2d" name = "clock" value = "type2d" onchange="typeSelect(this)">Digital 2 >>> Digits</label>                            
                             <label for = "type3d"><input type ="radio" class = "digital" id = "type3d" name = "clock" value = "type3d" onchange="typeSelect(this)">Digital 3 >>> Sliders</label>                            
@@ -182,8 +181,7 @@
 
                 <div class = "clockArea">
                     
-                    <!-- move >> style = "display: none" << from cl1d to cl1a after finishing editing -->
-                    <div class = "clock" id = "cl1d" style = "display: none"></div>
+                    <div class = "clock" id = "cl1d"></div>
                     <div class = "clock" id = "cl2d" style = "display: none">
                         <div class="block" id="0"></div>
                         <div class="block" id="1"></div>
@@ -316,12 +314,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class = "clock" id = "cl1a">
+                    <div class = "clock" id = "cl1a" style = "display: none">
                         <div class = "LC">
                             <div class = "timeZone">
                                 <div class = "dropdown">
                                     <button onclick="HnS(dpdwL); HnS(citySearch)" class = "dpBtn">Dropdown</button>
-                                    <input type = "text" placeholder = "Search..." style = "display: none;" id = "citySearch" onkeyup = "cityFilter()">
+                                    <input type = "text" placeholder = "Search..." style = "display: none;" id = "citySearch" onkeyup = "cityFilter(this)">
                                     <select class = "dpdwL" style = "display: none;" size = "10">
                                     </select>
                                 </div>
@@ -397,7 +395,7 @@
                         <div class = "MC">
                             <div class = "timeZone">
                                 <div class = "dropdown">
-                                    <button onclick="HnS(dpdwM); HnS(citySearch)" class = "dpBtn">Dropdown</button>
+                                    <button onclick="HnS(dpdwM)" class = "dpBtn">Dropdown</button>
                                     <!-- <input type = "text" placeholder = "Search..." style = "display: none;" id = "citySearch" onkeyup = "cityFilter()"> -->
                                     <select class = "dpdwM" style = "display: none;" size = "10">
                                     </select>
@@ -549,8 +547,7 @@
                         </div>
                     </div> 
                     
-<!-- delete >> style = "display: none" << after finishing editing -->
-                    <div class = "date" style = "display: none;"></div>
+                    <div class = "date"></div>
                 </div>
             </div>
         </div>
