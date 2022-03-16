@@ -19,7 +19,7 @@ button:hover { opacity: 80% }
 .display { 
   display: flex;
   flex-direction: row;
-  height: 60vh;
+  height: 100%;
 }
 
 .settings { width: 300px }
