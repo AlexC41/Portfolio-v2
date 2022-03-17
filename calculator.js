@@ -1,0 +1,23 @@
+//digits
+let dig0 = document.querySelector("#digit0")
+let dig1 = document.querySelector("#digit1")
+let dig2 = document.querySelector("#digit2")
+let dig3 = document.querySelector("#digit3")
+let dig4 = document.querySelector("#digit4")
+let dig5 = document.querySelector("#digit5")
+let dig6 = document.querySelector("#digit6")
+let dig7 = document.querySelector("#digit7")
+let dig8 = document.querySelector("#digit8")
+let dig9 = document.querySelector("#digit9")
+
+// operations
+let add = document.querySelector("#add")
+let subtract = document.querySelector("#subtract")
+let multiply = document.querySelector("#multiply")
+let divide = document.querySelector("#divide")
+let clear = document.querySelector("#clear")
+let del = document.querySelector("#del")
+let percent = document.querySelector("#percent")
+let period = document.querySelector("#period")
+let reverse = document.querySelector("#reverse")
+let equal = document.querySelector("#equal")
