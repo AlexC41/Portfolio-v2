@@ -31,10 +31,12 @@ button:hover { opacity: 80% }
     border-color: black;
     border-width: 5px;
 }
+
 .row {
     width: 320px;
     display: flex;
 }
+
 .keys {
     width: 25%;
     height: 50px;
@@ -44,6 +46,7 @@ button:hover { opacity: 80% }
 #sqrt, #powery, #parOpen, #parClose, #percent, #reverse, #period, #del { 
     background-color: red;
 }
+
 .resultsDisplay { 
     text-align: right;
     background-color: coral;
@@ -51,12 +54,23 @@ button:hover { opacity: 80% }
     padding-right: 10px;
     width: 300px;
     height: 85px;
+}
 
+.history {
+    position: absolute;
+    top: calc(10vh + 22px);
+    border: solid 5px black;
+    width: 320px;
+    height: 165px;
+    display: flex;
+    flex-flow: column wrap;
+    /* padding: 5px; */
 }
-.sentence {
-    font-size: 30px;
-}
-.result {
-    font-size: 20px;
-    opacity: 50%
+
+.history p {
+    /* height : 15px; */
+    font-size: 15px;
+    /* text-align: center; */
+    vertical-align: middle;
+    margin: 1px;
 }
