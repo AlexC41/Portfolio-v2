@@ -10,3 +10,15 @@ contact.innerHTML = `
 `
 
 
+function HnS(x){
+    if(x.style.display === "none") {
+        x.style.display = "flex"
+        if (x.className === "hContainer") {
+            x.style.flexDirection = "row"
+        } else {
+            x.style.flexDirection = "column"
+        }
+    } else {
+        x.style.display = "none"
+    }
+}
