@@ -28,8 +28,8 @@ let result = document.querySelector(".result");
 let history = document.querySelector(".history");
 
 // init
-let firstNumber = 0;
-let secondNumber = 0;
+let firstNumber = "";
+let secondNumber = "";
 
 let startSecondNumber = false;
 let operation = "";
@@ -123,13 +123,49 @@ divide.addEventListener("click", function(){
 })
 
 clear.addEventListener("click", function(){
-    firstNumber = 0;
-    secondNumber = 0;
+    firstNumber = "";
+    secondNumber = "";
+    sentence = "";
     startSecondNumber = false;
     sentenceDis.innerHTML = "One operation at a time";
     result.innerHTML = "Press = after every operation";
 })
+/* Work in progress
+percent.addEventListener("click", function(){
+    //math area
+    startSecondNumber = true;
+    operation = "percent";
 
+    //display area
+    symbol = "%";
+    sentenceDis.innerHTML = firstNumber + " " + symbol;
+    sentence = sentence + " " + symbol;
+    sentenceBig ()
+})
+*/
+
+del.addEventListener("click", function(){
+    if(startSecondNumber === false){
+        firstNumber = Math.floor(firstNumber / 10);
+        sentenceDis.innerHTML = firstNumber;
+        sentence = firstNumber;
+    } else {
+        secondNumber = Math.floor(secondNumber / 10);
+        sentenceDis.innerHTML = sentence + " " + secondNumber;
+    }
+})
+
+powery.addEventListener("click", function(){
+    //math area
+    startSecondNumber = true;
+    operation = "powery";
+
+    //display area
+    symbol = "x<sup>y</sup>";
+    sentenceDis.innerHTML = firstNumber + " " + "**";
+    sentence = sentence + " " + "**";
+    sentenceBig ()
+})
 
 equal.addEventListener("click", function(){
     let finalResult = 0;
@@ -154,8 +190,30 @@ equal.addEventListener("click", function(){
             result.innerHTML = "= " + finalResult;
             historyFn(sentence, finalResult)
             break;
+        case "powery" :
+            finalResult = Math.pow(firstNumber,secondNumber);
+            result.innerHTML = "= " + finalResult;
+            historyFn(sentence, finalResult)
+            break;
+
+        // work in progress
+        // case "percent" :
+        //     console.log(secondNumber)
+        //     if(secondNumber == ""){
+        //         console.log("1")
+        //         finalResult = firstNumber / 100;
+        //         result.innerHTML = "= " + finalResult;
+        //         historyFn(sentence, finalResult)
+        //         break;
+        //     } else {
+        //         console.log("2")
+        //         finalResult = firstNumber + symbol + ((firstNumber * secondNumber) / 100)
+        //         result.innerHTML = "= " + finalResult;
+        //         historyFn(sentence, finalResult)
+        //         break;
+        //     }
         default :
-            alert("Duuuuude, ceva ai facut gresit pe undeva :))")
+            alert(`Sorry, I couldn't implement equal after equal for the moment`)
     }
     firstNumber = "";
     secondNumber = "";
@@ -165,9 +223,9 @@ equal.addEventListener("click", function(){
 })
 
 function historyFn(x, y) {
-    const newP = document.createElement("p");
+    const newOpt = document.createElement("option");
     const newContent = document.createTextNode(x + " " + secondNumber +  " = " + y);
-    newP.appendChild(newContent);
-    history.appendChild(newP);
+    newOpt.appendChild(newContent);
+    history.appendChild(newOpt);
 }
 
