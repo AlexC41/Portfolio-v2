@@ -43,7 +43,7 @@ button:hover { opacity: 80% }
     font-size: 30px;
 }
 
-#sqrt, #powery, #parOpen, #parClose, #percent, #reverse, #period, #del { 
+#sqrt, #parClose, #percent, #reverse, #period { 
     background-color: red;
 }
 
@@ -67,10 +67,10 @@ button:hover { opacity: 80% }
     /* padding: 5px; */
 }
 
-.history p {
-    /* height : 15px; */
+/* .history option {
+    height : 20px;
     font-size: 15px;
-    /* text-align: center; */
     vertical-align: middle;
     margin: 1px;
-}
+    width: 100px;
+} */
