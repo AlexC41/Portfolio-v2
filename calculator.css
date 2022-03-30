@@ -14,7 +14,8 @@ button:hover { opacity: 80% }
     align-items: center;
 }
 
-.contentArea{
+.contentArea {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +28,9 @@ button:hover { opacity: 80% }
 }
 
 .calculator {
+    display: flex;
+    flex-direction: column;
+
     border-style: solid;
     border-color: black;
     border-width: 5px;
@@ -58,19 +62,21 @@ button:hover { opacity: 80% }
 
 .history {
     position: absolute;
-    top: calc(10vh + 22px);
+    top: 5px;
     border: solid 5px black;
     width: 320px;
     height: 165px;
     display: flex;
     flex-flow: column wrap;
+    background-image: url("resources/portfolio_back_2.png");
+    /* opacity: 50%; */
     /* padding: 5px; */
 }
 
-/* .history option {
+.history p {
     height : 20px;
     font-size: 15px;
     vertical-align: middle;
     margin: 1px;
     width: 100px;
-} */
+}
