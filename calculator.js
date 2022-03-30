@@ -223,9 +223,10 @@ equal.addEventListener("click", function(){
 })
 
 function historyFn(x, y) {
-    const newOpt = document.createElement("option");
+    const newP = document.createElement("p");
     const newContent = document.createTextNode(x + " " + secondNumber +  " = " + y);
-    newOpt.appendChild(newContent);
-    history.appendChild(newOpt);
+    newP.appendChild(newContent);
+    history.appendChild(newP);
+    
 }
 
