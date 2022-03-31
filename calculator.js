@@ -222,11 +222,23 @@ equal.addEventListener("click", function(){
     resultBig ()
 })
 
+
+let test = [];
 function historyFn(x, y) {
-    const newP = document.createElement("p");
-    const newContent = document.createTextNode(x + " " + secondNumber +  " = " + y);
-    newP.appendChild(newContent);
-    history.appendChild(newP);
-    
+    if (test.length <= 6){
+        const newP = document.createElement("p");
+        const newContent = document.createTextNode(x + " " + secondNumber +  " = " + y);
+        newP.appendChild(newContent);
+        history.appendChild(newP);
+        test.push(newContent);
+    } else {
+        const newP = document.createElement("p");
+        const newContent = document.createTextNode(x + " " + secondNumber +  " = " + y);
+        newP.appendChild(newContent);
+        history.appendChild(newP);
+        history.removeChild(history.firstElementChild)
+        test.shift(test[0]);
+        test.push(newContent);
+    }
 }
 
