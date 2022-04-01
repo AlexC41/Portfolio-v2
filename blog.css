@@ -1,22 +1,66 @@
-button {
-    background-color: #d4b996;
-    font-size: 20px;
-    margin: 2.5px;
-    cursor: pointer;
-    width: 130px;
+body {
+    box-sizing: border-box;
+    margin: 0px;
+    width: 100%;
+    background-image: url("resources/portfolio_back.png");
+    background-size: 100% auto;
 }
-  
-button:hover { opacity: 80% }
-  
-.menu {
+
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.contentArea {
-    position: relative;
+.navbar {
     display: flex;
-    justify-content: center;
+    flex-direction: row ;
+    justify-content: space-around;
     align-items: center;
+    border: 5px solid black;
+    width: 50vw;
+    height: 50px;
+}
+
+.dpdn, .dpdns {
+    position: relative;
+    display: inline-block;
+}
+  
+.dpdn-content, .dpdns-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 2.5px 10px;
+}
+
+.dpdn-content p {
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.dpdn:hover .dpdn-content {
+    display: block;
+}
+
+.dpdns:hover .dpdns-content {
+    display: block;
+}
+
+.mainPosts, .mPost, .postDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.mPostContainer, .shareArea {
+    display: flex;
+}
+
+
+
+.postDetails img {
+    width: 20px;
+    height: 20px;
 }
