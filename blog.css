@@ -58,7 +58,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-    width : 75%;
+    width : 75vw;
     padding-bottom: 25px;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .mPostThumbnail img {
     padding-top: 20px;
-    width: 50rem;
+    width: 50vw;
 }
 
 .mPost {
@@ -79,7 +79,7 @@ body {
     justify-content: space-between;
 
     padding-top: 10px;
-    width: 50rem;
+    width: 50vw;
     background-color: rgba(255, 255, 255, 0.692);
 }
 
@@ -126,13 +126,13 @@ body {
     padding: 15px;
 }
 
-.readMore {
+.mReadMore {
     position: absolute;
     right: 0px;
     bottom: 5px;
 }
 
-.postDetails img {
+.shareArea img {
     width: 20px;
     height: 20px;
 }
@@ -142,7 +142,6 @@ body {
     flex-direction: column ;
     justify-content: flex-start;
     
-    height: 100rem;
     width: 25vw;
     margin-right: 50px;
     padding: 20px;
@@ -151,6 +150,7 @@ body {
 
 .sPostContainer img {
     width: 20vw;
+    padding: 5px;
 }
 
 .sPostContainer {
@@ -158,6 +158,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    width: 25vw;
+    height: calc(25vw * 1.6);
+    border-bottom: 2px solid lightsteelblue;
+}
 
-    border: solid 5px black;
+.sPostContent {
+    padding: 5px;
+}
+
+#shareSec {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0 10px 0;
+}
+
+.sReadMore {
+    display: flex;
+    align-self: flex-end;
 }
