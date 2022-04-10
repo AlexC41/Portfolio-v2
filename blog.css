@@ -178,3 +178,12 @@ body {
     display: flex;
     align-self: flex-end;
 }
+
+.allPosts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid lightsteelblue;
+    padding: 5px;
+}
+
