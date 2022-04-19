@@ -40,6 +40,10 @@ body {
     padding-bottom: 10px;
     border-bottom: 1px solid grey;
 }
+/* .dpdn-content span {
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+} */
 
 .dpdn:hover .dpdn-content {
     display: block;
