@@ -1,0 +1,96 @@
+button {
+    background-color: #d4b996;
+    font-size: 20px;
+    margin: 2.5px;
+    cursor: pointer;
+    width: 130px;
+}
+  
+button:hover { opacity: 80% }
+  
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contentArea {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.leftSide {
+    position: absolute;
+    left: 0;
+    width: 20%;
+    height: inherit;
+    border: solid 5px green;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.searchArea {
+    width: 100%;
+    height: 10vh;
+    border: solid 5px red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.historyArea {
+    width: 100%;
+    height: 10vh;
+    border: solid 5px blue;
+}
+
+.cardLimits {
+    position: relative;
+    width: 20vw;
+    height: 30vw;
+    border: solid 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.HPType {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.image {
+    border: solid 1px red;
+    margin-top: 25px;
+    width: 12.5vw;
+    height: 12.5vw;
+}
+
+.powMove {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15px;
+    width: 100%;
+}
+
+.mDesc {
+    display: flex;
+}
+
+.WNS {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

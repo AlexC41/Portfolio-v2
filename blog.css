@@ -22,35 +22,46 @@ body {
     height: 50px;
 }
 
-.dpdn, .dpdns {
+.dpdn {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
   
-.dpdn-content, .dpdns-content {
+.dpdn-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 2.5px 10px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    border-bottom: 1px solid grey;
+    /* transform: skew(21deg); */
 }
 
-.dpdn-content p {
-    padding-bottom: 10px;
-    border-bottom: 1px solid grey;
+a {
+    text-decoration: none;
 }
-/* .dpdn-content span {
-    padding-bottom: 10px;
-    border-bottom: 1px solid grey;
+
+/* .navbar > .dpdn {
+    background: #fff;
+    padding: 0px 10px;
+    transform: skew(-21deg);
+    
+} */
+/* .dpdn > p {
+    display: inline-block;
+    transform: skew(21deg);
 } */
 
 .dpdn:hover .dpdn-content {
-    display: block;
-}
-
-.dpdns:hover .dpdns-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    opacity: 0.9;
 }
 
 .contentArea {
@@ -93,8 +104,8 @@ body {
     align-items: flex-start;
 
     border-right: 2px solid lightblue;
-    width : 25%;
-    padding: 10px 30px 10px 0px;
+    width : 28%;
+    padding: 10px 15px 10px 0px;
 }
 
 .postCat {
@@ -130,10 +141,10 @@ body {
     padding: 15px;
 }
 
-.mReadMore {
+.readMore {
     position: absolute;
-    right: 0px;
-    bottom: 5px;
+    right: 5px;
+    bottom: 10px;
 }
 
 .shareArea img {
@@ -145,6 +156,7 @@ body {
     display: flex;
     flex-direction: column ;
     justify-content: flex-start;
+    height: max-content;
     
     width: 25vw;
     margin-right: 50px;
@@ -164,23 +176,26 @@ body {
     align-items: center;
     
     width: 25vw;
-    height: calc(25vw * 1.6);
+    height: max-content;
     border-bottom: 2px solid lightsteelblue;
+    padding-bottom: 20px;
 }
 
 .sPostContent {
     padding: 5px;
+    width: inherit;
+    padding-bottom: 20px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }
 
 #shareSec {
     display: flex;
     justify-content: space-evenly;
     padding: 10px 0 10px 0;
-}
-
-.sReadMore {
-    display: flex;
-    align-self: flex-end;
 }
 
 .allPosts {
