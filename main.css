@@ -27,7 +27,7 @@ body {
     width: 15vw;
     height: 80vh;
     margin: 5px 5px 0px 5px ;
-    padding: 0px;
+    padding-top: 5px;
     border: solid 2px black;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ body {
     width: 80vw;
     height: 80vh;
     margin: 5px 5px 0px 5px ;
-    padding: 5px;
+    padding-top: 5px;
     border: solid 2px black;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ a:hover {
     right: 5px;
 }
 
-#smPic {  /*trebuie sa modific numele ID-ului cu unul mai intuitiv, dar nu ma astept la ceva bun dintr-o data la ora 1:30 :)) */
+#smPic {  /*trebuie sa modific numele ID-ului cu unul mai intuitiv */
     height: 2.5vw;
     width: 2.5vw;
     border-radius: 5px;

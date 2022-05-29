@@ -63,7 +63,7 @@ button:hover { opacity: 80% }
 
 .name {
     position: absolute;
-    left: 1%;
+    left: 1rem;
     top: 1%;
     text-transform: capitalize;
 }
